@@ -29,9 +29,9 @@ switch ($method) {
             }
 
             $stmt->execute();
-            $product = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $resident = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            echo json_encode($product);
+            echo json_encode($resident);
         }
 
 
