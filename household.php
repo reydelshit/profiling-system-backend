@@ -17,7 +17,17 @@ switch ($method) {
         }
 
         if (!isset($_GET['house_id'])) {
-            $sql = " SELECT * FROM household ORDER BY house_id DESC";
+            $sql = "SELECT 
+            household.house_no, 
+            household.house_purok, 
+            household.house_address, 
+            COUNT(DISTINCT resident.resident_id) AS resident_count
+        FROM 
+            household
+        LEFT JOIN 
+            resident ON resident.resident_houseno = household.house_no
+        GROUP BY 
+            household.house_no, household.house_purok, household.house_address;";
         }
 
 

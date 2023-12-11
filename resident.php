@@ -110,8 +110,10 @@ switch ($method) {
             resident_image = :resident_image,
             resident_type = :resident_type,
             resident_civilstatus = :resident_civilstatus,
-            resident_purok = :resident_purok
+            resident_purok = :resident_purok,
             resident_address = :resident_address
+
+
         WHERE resident_id = :resident_id";
 
         $stmt = $conn->prepare($sql);
